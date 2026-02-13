@@ -1,4 +1,4 @@
 package com.comunicaciones.comunicacionesInternas.Servicios;
 
-public class SNotificaciones {
+public class SColaboradoranuncio {
 }

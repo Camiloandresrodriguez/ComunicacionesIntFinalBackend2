@@ -1,4 +1,4 @@
 package com.comunicaciones.comunicacionesInternas.Modelo;
 
-public class MUsuario {
+public class MColaborador {
 }

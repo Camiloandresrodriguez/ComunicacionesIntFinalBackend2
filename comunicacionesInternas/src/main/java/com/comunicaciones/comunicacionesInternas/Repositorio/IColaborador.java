@@ -1,4 +1,4 @@
 package com.comunicaciones.comunicacionesInternas.Repositorio;
 
-public interface IDetallesNotificaciones {
+public interface IColaborador {
 }

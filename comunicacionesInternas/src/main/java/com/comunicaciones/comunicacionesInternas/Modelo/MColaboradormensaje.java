@@ -1,4 +1,4 @@
 package com.comunicaciones.comunicacionesInternas.Modelo;
 
-public class MDetallesNotificaciones {
+public class MColaboradormensaje {
 }
