@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IMensajesDirectos extends JpaRepository<MMensajesDirectos, Integer>
+public interface IMensajesDirectos extends JpaRepository<MMensajesDirectos, String>
 {
     List<MMensajesDirectos>findBytitulomensaje(String titulomensaje);
 }

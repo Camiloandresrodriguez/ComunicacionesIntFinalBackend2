@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IAnuncios extends JpaRepository<MAnuncios, Integer>
+public interface IAnuncios extends JpaRepository<MAnuncios, String>
 {
     List<MAnuncios>findBytitulo(String titulo);
 }

@@ -11,13 +11,13 @@ public class MComentariosForos
 {
     @Id
     @Column(length = 20,nullable = false)
-    private Integer idcomntario;
+    private String idcomntario;
 
     @Column(nullable = false)
-    private Integer idforo;
+    private String idforo;
 
     @Column(nullable = false)
-    private Integer idcolaborador;
+    private String idcolaborador;
 
     @Column(length = 250,nullable = false)
     private String contenido;
@@ -27,7 +27,7 @@ public class MComentariosForos
 
     //Constructor
 
-    public MComentariosForos(Integer idcomntario, Integer idforo, Integer idcolaborador, String contenido, String fechapublicaión)
+    public MComentariosForos(String idcomntario, String idforo, String idcolaborador, String contenido, String fechapublicaión)
     {
         this.idcomntario = idcomntario;
         this.idforo = idforo;
@@ -44,32 +44,32 @@ public class MComentariosForos
 
     //Get and set
 
-    public Integer getIdcomntario()
+    public String getIdcomntario()
     {
         return idcomntario;
     }
 
-    public void setIdcomntario(Integer idcomntario)
+    public void setIdcomntario(String idcomntario)
     {
         this.idcomntario = idcomntario;
     }
 
-    public Integer getIdforo()
+    public String getIdforo()
     {
         return idforo;
     }
 
-    public void setIdforo(Integer idforo)
+    public void setIdforo(String idforo)
     {
         this.idforo = idforo;
     }
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }

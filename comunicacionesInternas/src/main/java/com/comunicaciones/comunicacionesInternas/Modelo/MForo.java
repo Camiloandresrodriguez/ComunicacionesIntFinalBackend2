@@ -11,7 +11,7 @@ public class MForo
 {
     @Id
     @Column(length = 20, nullable = false)
-    private Integer idforo;
+    private String idforo;
 
     @Column(length = 70, nullable = false)
     private String titulo;
@@ -23,11 +23,11 @@ public class MForo
     private String fechacreacion;
 
     @Column(nullable = false)
-    private Integer idcolaborador;
+    private String idcolaborador;
 
     //Constructor
 
-    public MForo(Integer idforo, String titulo, String descripcion, String fechacreacion, Integer idcolaborador)
+    public MForo(String idforo, String titulo, String descripcion, String fechacreacion, String idcolaborador)
     {
         this.idforo = idforo;
         this.titulo = titulo;
@@ -43,12 +43,12 @@ public class MForo
 
     //Get and set
 
-    public Integer getIdforo()
+    public String getIdforo()
     {
         return idforo;
     }
 
-    public void setIdforo(Integer idforo)
+    public void setIdforo(String idforo)
     {
         this.idforo = idforo;
     }
@@ -83,12 +83,12 @@ public class MForo
         this.fechacreacion = fechacreacion;
     }
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }

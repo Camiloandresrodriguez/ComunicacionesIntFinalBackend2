@@ -1,4 +1,5 @@
 package com.comunicaciones.comunicacionesInternas.Controlador;
 
-public class CForo {
+public class CForo
+{
 }

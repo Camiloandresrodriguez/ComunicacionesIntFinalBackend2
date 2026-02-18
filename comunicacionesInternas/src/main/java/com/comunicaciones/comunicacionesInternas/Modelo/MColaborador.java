@@ -11,7 +11,7 @@ public class MColaborador
 {
 @Id
 @Column(name = "idcolaborador", nullable = false)
-private Integer idcolaborador;
+private String idcolaborador;
 
 @Column(length = 50, nullable = false)
 private String tipocolaborador;
@@ -38,7 +38,7 @@ private  String activo;
 
 //Constructores
 
-    public MColaborador(Integer idcolaborador, String tipocolaborador, String nombrecolaborador, String apellidocolaborador, String correoelectronico, String clave, String fecharegistro, String activo)
+    public MColaborador(String idcolaborador, String tipocolaborador, String nombrecolaborador, String apellidocolaborador, String correoelectronico, String clave, String fecharegistro, String activo)
     {
         this.idcolaborador = idcolaborador;
         this.tipocolaborador = tipocolaborador;
@@ -58,12 +58,12 @@ private  String activo;
 
 //Get and set
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }

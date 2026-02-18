@@ -11,7 +11,7 @@ public class MAnuncios
 {
     @Id
     @Column(length = 20,nullable = false)
-    private Integer codanuncio;
+    private String codanuncio;
 
     @Column(length = 70,nullable = false)
     private String titulo;
@@ -23,11 +23,11 @@ public class MAnuncios
     private String fechapublicación;
 
     @Column(nullable = false)
-    private Integer idcolaborador;
+    private String idcolaborador;
 
     //contructor
 
-    public MAnuncios(Integer codanuncio, String titulo, String contenido, String fechapublicación, Integer idcolaborador)
+    public MAnuncios(String codanuncio, String titulo, String contenido, String fechapublicación, String idcolaborador)
     {
         this.codanuncio = codanuncio;
         this.titulo = titulo;
@@ -44,12 +44,12 @@ public class MAnuncios
 
     //Get and Set
 
-    public Integer getCodanuncio()
+    public String getCodanuncio()
     {
         return codanuncio;
     }
 
-    public void setCodanuncio(Integer codanuncio)
+    public void setCodanuncio(String codanuncio)
     {
         this.codanuncio = codanuncio;
     }
@@ -84,12 +84,12 @@ public class MAnuncios
         this.fechapublicación = fechapublicación;
     }
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }

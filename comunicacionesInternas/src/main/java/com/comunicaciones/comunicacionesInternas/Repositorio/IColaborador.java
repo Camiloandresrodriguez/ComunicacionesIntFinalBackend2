@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IColaborador extends JpaRepository<MColaborador, Integer>
+public interface IColaborador extends JpaRepository<MColaborador, String>
 {
     List<MColaborador>findByNombrecolaborador(String nombrecolaborador);
 }

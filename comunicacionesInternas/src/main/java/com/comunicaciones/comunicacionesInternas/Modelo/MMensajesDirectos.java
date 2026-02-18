@@ -11,7 +11,7 @@ public class MMensajesDirectos
 {
     @Id
     @Column(length = 20, nullable = false)
-    private Integer codmensaje;
+    private String codmensaje;
 
     @Column(length = 70,nullable = false)
     private String titulomensaje;
@@ -23,11 +23,11 @@ public class MMensajesDirectos
     private String fechacreacion;
 
     @Column(nullable = false)
-    private Integer idcolaborador;
+    private String idcolaborador;
 
     //Constructor
 
-    public MMensajesDirectos(Integer codmensaje, String titulomensaje, String contenidomensaje, String fechacreacion, Integer idcolaborador)
+    public MMensajesDirectos(String codmensaje, String titulomensaje, String contenidomensaje, String fechacreacion, String idcolaborador)
     {
         this.codmensaje = codmensaje;
         this.titulomensaje = titulomensaje;
@@ -44,12 +44,12 @@ public class MMensajesDirectos
 
     //Get and set
 
-    public Integer getCodmensaje()
+    public String getCodmensaje()
     {
         return codmensaje;
     }
 
-    public void setCodmensaje(Integer codmensaje)
+    public void setCodmensaje(String codmensaje)
     {
         this.codmensaje = codmensaje;
     }
@@ -82,12 +82,12 @@ public class MMensajesDirectos
         this.fechacreacion = fechacreacion;
     }
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IForo extends JpaRepository<MForo, Integer>
+public interface IForo extends JpaRepository<MForo, String>
 {
     List<MForo>findBytitulo(String titulo);
 }

@@ -9,10 +9,10 @@ import jakarta.persistence.Table;
 public class MColaboradormensaje
 {
     @Column(nullable = false)
-    private Integer idcolaborador;
+    private String idcolaborador;
 
     @Column(nullable = false)
-    private Integer codmensaje;
+    private String codmensaje;
 
     @Column(length = 15,nullable = false)
     private String fechamensaje;
@@ -21,7 +21,7 @@ public class MColaboradormensaje
     private String activo;
 
     //Constructor
-    public MColaboradormensaje(Integer idcolaborador, Integer codmensaje, String fechamensaje, String activo)
+    public MColaboradormensaje(String idcolaborador, String codmensaje, String fechamensaje, String activo)
     {
         this.idcolaborador = idcolaborador;
         this.codmensaje = codmensaje;
@@ -38,22 +38,22 @@ public class MColaboradormensaje
 
     //Get and set
 
-    public Integer getIdcolaborador()
+    public String getIdcolaborador()
     {
         return idcolaborador;
     }
 
-    public void setIdcolaborador(Integer idcolaborador)
+    public void setIdcolaborador(String idcolaborador)
     {
         this.idcolaborador = idcolaborador;
     }
 
-    public Integer getCodmensaje()
+    public String getCodmensaje()
     {
         return codmensaje;
     }
 
-    public void setCodmensaje(Integer codmensaje)
+    public void setCodmensaje(String codmensaje)
     {
         this.codmensaje = codmensaje;
     }

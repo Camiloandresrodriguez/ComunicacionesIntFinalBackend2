@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IColaboradoranuncio extends JpaRepository<MColaboradoranuncio, Integer>
+public interface IColaboradoranuncio extends JpaRepository<MColaboradoranuncio, String>
 {
 }

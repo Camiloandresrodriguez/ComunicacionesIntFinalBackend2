@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IComentariosForos extends JpaRepository<MComentariosForos, Integer>
+public interface IComentariosForos extends JpaRepository<MComentariosForos, String>
 {
 
 }
