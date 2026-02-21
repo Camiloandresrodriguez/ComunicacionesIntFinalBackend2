@@ -25,19 +25,22 @@ public class MMensajesDirectos
     @Column(length = 10,nullable = false)
     private String activo;
 
-    @Column(nullable = false)
-    private String idcolaborador;
+    @ManyToOne
+    @JoinColumn(name = "pkcolaborador", referencedColumnName = "idcolaborador", nullable = false)
+    @JsonBackReference
+    MColaborador mColaborador;
+
 
     //Constructor
 
-    public MMensajesDirectos(String codmensaje, String titulomensaje, String contenidomensaje, LocalDate fechacreacion, String activo, String idcolaborador)
-    {
+
+    public MMensajesDirectos(String codmensaje, String titulomensaje, String contenidomensaje, LocalDate fechacreacion, String activo, MColaborador mColaborador) {
         this.codmensaje = codmensaje;
         this.titulomensaje = titulomensaje;
         this.contenidomensaje = contenidomensaje;
         this.fechacreacion = fechacreacion;
         this.activo = activo;
-        this.idcolaborador = idcolaborador;
+        this.mColaborador = mColaborador;
     }
 
     //Constructor vacio
@@ -48,64 +51,53 @@ public class MMensajesDirectos
 
     //Get and set
 
-    public String getCodmensaje()
-    {
+
+    public String getCodmensaje() {
         return codmensaje;
     }
 
-    public void setCodmensaje(String codmensaje)
-    {
+    public void setCodmensaje(String codmensaje) {
         this.codmensaje = codmensaje;
     }
 
-    public String getTitulomensaje()
-    {
+    public String getTitulomensaje() {
         return titulomensaje;
     }
 
-    public void setTitulomensaje(String titulomensaje)
-    {
+    public void setTitulomensaje(String titulomensaje) {
         this.titulomensaje = titulomensaje;
     }
 
-    public String getContenidomensaje()
-    {
+    public String getContenidomensaje() {
         return contenidomensaje;
     }
 
-    public void setContenidomensaje(String contenidomensaje)
-    {
+    public void setContenidomensaje(String contenidomensaje) {
         this.contenidomensaje = contenidomensaje;
     }
 
-    public LocalDate getFechacreacion()
-    {
+    public LocalDate getFechacreacion() {
         return fechacreacion;
     }
 
-    public void setFechacreacion(LocalDate fechacreacion)
-    {
+    public void setFechacreacion(LocalDate fechacreacion) {
         this.fechacreacion = fechacreacion;
     }
 
-    public String getActivo()
-    {
+    public String getActivo() {
         return activo;
     }
 
-    public void setActivo(String activo)
-    {
+    public void setActivo(String activo) {
         this.activo = activo;
     }
 
-    public String getIdcolaborador()
-    {
-        return idcolaborador;
+    public MColaborador getmColaborador() {
+        return mColaborador;
     }
 
-    public void setIdcolaborador(String idcolaborador)
-    {
-        this.idcolaborador = idcolaborador;
+    public void setmColaborador(MColaborador mColaborador) {
+        this.mColaborador = mColaborador;
     }
 }
 

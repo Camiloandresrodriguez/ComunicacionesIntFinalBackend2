@@ -52,7 +52,7 @@ public class CAnuncios
     }
 
     //Endpoint consulta individual por codigo
-    @GetMapping
+    @GetMapping("/{codanuncio}")
     public ResponseEntity<?> consultaindividualId(@PathVariable String codanuncio)throws Exception
     {
         try
@@ -70,7 +70,7 @@ public class CAnuncios
     }
 
     //Consulta individual por nombre
-    @GetMapping
+    @GetMapping("/buscartitulo/{titulo}")
     public ResponseEntity<?>consultaindividualtitulo(@PathVariable String titulo)throws Exception
     {
         try
@@ -88,7 +88,7 @@ public class CAnuncios
     }
 
     //Endpoint modificar
-    @PutMapping
+    @PutMapping("/{codanuncio}")
     public ResponseEntity<?>modificar(@RequestBody MAnuncios mAnuncios, @PathVariable String codanundio)throws Exception
     {
         try
@@ -106,7 +106,7 @@ public class CAnuncios
     }
 
     //Endpoint anular
-    @PutMapping
+    @PutMapping("/anular/{codanuncio}")
     public ResponseEntity<?> anular(@RequestBody MAnuncios mAnuncios, @PathVariable String codanuncio)throws Exception
     {
         try
@@ -124,7 +124,7 @@ public class CAnuncios
     }
 
     //Endpoint eliminar
-    @DeleteMapping
+    @DeleteMapping("/{codanuncio}")
     public ResponseEntity<?> eliminar(@PathVariable String codanuncio)throws Exception
     {
         try

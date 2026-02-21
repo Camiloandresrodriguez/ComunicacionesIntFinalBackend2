@@ -95,6 +95,7 @@ public class SMensajesDirectos
                 nuevoregistro.setContenidomensaje(mMensajesDirectos.getContenidomensaje());
                 nuevoregistro.setFechacreacion(mMensajesDirectos.getFechacreacion());
                 nuevoregistro.setActivo(mMensajesDirectos.getActivo());
+                nuevoregistro.setmColaborador(mMensajesDirectos.getmColaborador());
                 return this.iMensajesDirectos.save(nuevoregistro);
             }
             else

@@ -1,12 +1,20 @@
 package com.comunicaciones.comunicacionesInternas.Modelo;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "anuncios")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "codanuncio"
+)
 public class MAnuncios
 {
     @Id
@@ -25,19 +33,27 @@ public class MAnuncios
     @Column(length = 10,nullable = false)
     private String activo;
 
-    @Column(nullable = false)
-    private String idcolaborador;
+    @ManyToOne
+    @JoinColumn(name = "pkcolaborador", referencedColumnName = "idcolaborador", nullable = false)
+    @JsonBackReference
+    MColaborador mColaborador;
+
+    @OneToMany(mappedBy = "mAnuncios")
+    @JsonManagedReference
+    List<MColaboradoranuncio> mColaboradoranuncio;
 
 
     //contructor
-    public MAnuncios(String codanuncio, String titulo, String contenido, LocalDate fechapublicacion, String activo, String idcolaborador)
-    {
+
+
+    public MAnuncios(String codanuncio, String titulo, String contenido, LocalDate fechapublicacion, String activo, MColaborador mColaborador, List<MColaboradoranuncio> mColaboradoranuncio) {
         this.codanuncio = codanuncio;
         this.titulo = titulo;
         this.contenido = contenido;
         this.fechapublicacion = fechapublicacion;
         this.activo = activo;
-        this.idcolaborador = idcolaborador;
+        this.mColaborador = mColaborador;
+        this.mColaboradoranuncio = mColaboradoranuncio;
     }
 
     //Constructor vacio
@@ -46,63 +62,61 @@ public class MAnuncios
     }
 
     //Get and Set
-    public String getCodanuncio()
-    {
+
+
+    public String getCodanuncio() {
         return codanuncio;
     }
 
-    public void setCodanuncio(String codanuncio)
-    {
+    public void setCodanuncio(String codanuncio) {
         this.codanuncio = codanuncio;
     }
 
-    public String getTitulo()
-    {
+    public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo)
-    {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
-    public String getContenido()
-    {
+    public String getContenido() {
         return contenido;
     }
 
-    public void setContenido(String contenido)
-    {
+    public void setContenido(String contenido) {
         this.contenido = contenido;
     }
 
-    public LocalDate getFechapublicacion()
-    {
+    public LocalDate getFechapublicacion() {
         return fechapublicacion;
     }
 
-    public void setFechapublicacion(LocalDate fechapublicacion)
-    {
+    public void setFechapublicacion(LocalDate fechapublicacion) {
         this.fechapublicacion = fechapublicacion;
     }
 
-    public String getActivo()
-    {
+    public String getActivo() {
         return activo;
     }
 
-    public void setActivo(String activo)
-    {
+    public void setActivo(String activo) {
         this.activo = activo;
     }
 
-    public String getIdcolaborador()
-    {
-        return idcolaborador;
+    public MColaborador getmColaborador() {
+        return mColaborador;
     }
 
-    public void setIdcolaborador(String idcolaborador)
-    {
-        this.idcolaborador = idcolaborador;
+    public void setmColaborador(MColaborador mColaborador) {
+        this.mColaborador = mColaborador;
+    }
+
+    public List<MColaboradoranuncio> getmColaboradoranuncio() {
+        return mColaboradoranuncio;
+    }
+
+    public void setmColaboradoranuncio(List<MColaboradoranuncio> mColaboradoranuncio) {
+        this.mColaboradoranuncio = mColaboradoranuncio;
     }
 }

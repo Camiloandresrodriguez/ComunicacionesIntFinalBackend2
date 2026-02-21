@@ -93,6 +93,7 @@ public class SAnuncios
                 nuevoregistro.setContenido(mAnuncios.getContenido());
                 nuevoregistro.setFechapublicacion(mAnuncios.getFechapublicacion());
                 nuevoregistro.setActivo(mAnuncios.getActivo());
+                nuevoregistro.setmColaborador(mAnuncios.getmColaborador());
                 return this.iAnuncios.save(nuevoregistro);
             }
             else

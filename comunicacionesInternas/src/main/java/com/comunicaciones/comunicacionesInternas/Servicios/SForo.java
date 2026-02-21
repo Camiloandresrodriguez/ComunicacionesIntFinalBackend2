@@ -91,6 +91,7 @@ public class SForo
                 nuevoregistro.setDescripcion(mForo.getDescripcion());
                 nuevoregistro.setFechacreacion(mForo.getFechacreacion());
                 nuevoregistro.setActivo(mForo.getActivo());
+                nuevoregistro.setmColaborador(mForo.getmColaborador());
                 return this.iForo.save(nuevoregistro);
             }
             else

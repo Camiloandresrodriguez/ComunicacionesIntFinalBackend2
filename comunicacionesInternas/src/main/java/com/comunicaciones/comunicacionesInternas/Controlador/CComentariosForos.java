@@ -52,7 +52,7 @@ public class CComentariosForos
     }
 
     //Endpoint consulta individual por identificación
-    @GetMapping
+    @GetMapping("/{idcomentario}")
     public ResponseEntity<?>consultaindividualid(@PathVariable String idcolaborador)throws Exception
     {
         try
@@ -70,7 +70,7 @@ public class CComentariosForos
     }
 
     //Endpoint anular
-    @PutMapping
+    @PutMapping("/anular/{idcomentario}")
     public ResponseEntity<?>anular(@RequestBody MComentariosForos mComentariosForos, @PathVariable String idcolaborador)throws Exception
     {
         try
@@ -88,7 +88,7 @@ public class CComentariosForos
     }
 
     //Endpoint eliminar
-    @DeleteMapping
+    @DeleteMapping("/{idcomentario}")
     public ResponseEntity<?>eliminar(@PathVariable String idcolaborador)throws Exception
     {
         try

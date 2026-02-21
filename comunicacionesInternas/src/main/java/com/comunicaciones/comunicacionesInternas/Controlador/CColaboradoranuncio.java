@@ -51,7 +51,7 @@ public class CColaboradoranuncio
     }
 
     //Endpoint consulta individual por identificación
-    @GetMapping
+    @GetMapping("/{consecutivo}")
     public ResponseEntity<?>consultaindividualid(@PathVariable String idcolaborador)throws Exception
     {
         try
@@ -69,7 +69,7 @@ public class CColaboradoranuncio
     }
 
     //Endpoint anular
-    @PutMapping
+    @PutMapping("/anular/{consecutivo}")
     public ResponseEntity<?>anular(@RequestBody MColaboradoranuncio mColaboradoranuncio, @PathVariable String idcolaborador)throws Exception
     {
         try
@@ -87,7 +87,7 @@ public class CColaboradoranuncio
     }
 
     //Endpoint eliminar
-    @DeleteMapping
+    @DeleteMapping("/{consecutivo}")
     public ResponseEntity<?>eliminar(@PathVariable String idcolaborador)throws Exception
     {
         try

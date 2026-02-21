@@ -1,25 +1,24 @@
 package com.comunicaciones.comunicacionesInternas.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "comentariosforos")
+
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "idcomentario"
+)
 public class MComentariosForos
 {
     @Id
     @Column(length = 20,nullable = false)
     private String idcomentario;
-
-    @Column(nullable = false)
-    private String idforo;
-
-    @Column(nullable = false)
-    private String idcolaborador;
 
     @Column(length = 250,nullable = false)
     private String contenido;
@@ -30,15 +29,26 @@ public class MComentariosForos
     @Column(length = 10,nullable = false)
     private String activo;
 
+    @ManyToOne
+    @JoinColumn(name = "pkcolaborador", referencedColumnName = "idcolaborador", nullable = false)
+    @JsonBackReference
+    MColaborador mColaborador;
+
+    @ManyToOne
+    @JoinColumn(name = "pkforo", referencedColumnName = "idforo", nullable = false)
+    @JsonBackReference
+    MForo mForo;
+
     //Constructor
-    public MComentariosForos(String idcomentario, String idforo, String idcolaborador, String contenido, LocalDate fechapublicaion, String activo)
-    {
+
+
+    public MComentariosForos(String idcomentario, String contenido, LocalDate fechapublicaion, String activo, MColaborador mColaborador, MForo mForo) {
         this.idcomentario = idcomentario;
-        this.idforo = idforo;
-        this.idcolaborador = idcolaborador;
         this.contenido = contenido;
         this.fechapublicaion = fechapublicaion;
         this.activo = activo;
+        this.mColaborador = mColaborador;
+        this.mForo = mForo;
     }
 
     //Constructor vacio
@@ -49,63 +59,51 @@ public class MComentariosForos
     //Get and set
 
 
-    public String getIdcomentario()
-    {
+    public String getIdcomentario() {
         return idcomentario;
     }
 
-    public void setIdcomntario(String idcomentario)
-    {
+    public void setIdcomentario(String idcomentario) {
         this.idcomentario = idcomentario;
     }
 
-    public String getIdforo()
-    {
-        return idforo;
-    }
-
-    public void setIdforo(String idforo)
-    {
-        this.idforo = idforo;
-    }
-
-    public String getIdcolaborador()
-    {
-        return idcolaborador;
-    }
-
-    public void setIdcolaborador(String idcolaborador)
-    {
-        this.idcolaborador = idcolaborador;
-    }
-
-    public String getContenido()
-    {
+    public String getContenido() {
         return contenido;
     }
 
-    public void setContenido(String contenido)
-    {
+    public void setContenido(String contenido) {
         this.contenido = contenido;
     }
 
-    public LocalDate getFechapublicaion()
-    {
+    public LocalDate getFechapublicaion() {
         return fechapublicaion;
     }
 
-    public void setFechapublicaion(LocalDate fechapublicaion)
-    {
+    public void setFechapublicaion(LocalDate fechapublicaion) {
         this.fechapublicaion = fechapublicaion;
     }
 
-    public String getActivo()
-    {
+    public String getActivo() {
         return activo;
     }
 
-    public void setActivo(String activo)
-    {
+    public void setActivo(String activo) {
         this.activo = activo;
+    }
+
+    public MColaborador getmColaborador() {
+        return mColaborador;
+    }
+
+    public void setmColaborador(MColaborador mColaborador) {
+        this.mColaborador = mColaborador;
+    }
+
+    public MForo getmForo() {
+        return mForo;
+    }
+
+    public void setmForo(MForo mForo) {
+        this.mForo = mForo;
     }
 }
