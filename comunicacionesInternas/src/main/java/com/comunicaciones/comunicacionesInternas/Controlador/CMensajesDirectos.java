@@ -52,7 +52,7 @@ public class CMensajesDirectos
     }
 
     //Endpoint consulta individual por codigo
-    @GetMapping
+    @GetMapping("/{codmensaje}")
     public ResponseEntity<?>consultaindividualid(@PathVariable String codmensaje)throws Exception
     {
         try
@@ -70,7 +70,7 @@ public class CMensajesDirectos
     }
 
     //Endpoint consulta individuao por nombre
-    @GetMapping
+    @GetMapping("/{titulomensaje}")
     public ResponseEntity<?>consultaindividualtitulomensaje(@PathVariable String titulomensaje)throws Exception
     {
         try
@@ -88,7 +88,7 @@ public class CMensajesDirectos
     }
 
     //Endpoint modificar
-    @PutMapping
+    @PutMapping("/{codmensaje}")
     public ResponseEntity<?> modificar(@RequestBody MMensajesDirectos mMensajesDirectos, @PathVariable String codmensaje)throws Exception
     {
         try
@@ -106,7 +106,7 @@ public class CMensajesDirectos
     }
 
     //Endpoint anular
-    @PutMapping
+    @PutMapping("/anular/{codmensaje}")
     public ResponseEntity<?> anular(@RequestBody MMensajesDirectos mMensajesDirectos, @PathVariable String codmensaje)throws Exception
     {
         try
@@ -124,7 +124,7 @@ public class CMensajesDirectos
     }
 
     //Endpoint eliminar
-    @DeleteMapping
+    @DeleteMapping("/{codmensaje}")
     public ResponseEntity<?> eliminar(@PathVariable String codmensaje)throws Exception
     {
         try
