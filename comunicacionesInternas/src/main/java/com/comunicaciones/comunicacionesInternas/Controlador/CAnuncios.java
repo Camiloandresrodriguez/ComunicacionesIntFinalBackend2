@@ -77,7 +77,7 @@ public class CAnuncios
         {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.consultaindividualtitulo(titulo));
+                    .body(this.sAnuncios.consultaindividualtitulo(titulo));
         }
         catch (Exception error)
         {
