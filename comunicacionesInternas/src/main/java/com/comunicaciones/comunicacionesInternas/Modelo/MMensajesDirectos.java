@@ -32,7 +32,7 @@ public class MMensajesDirectos
     private String activo;
 
     @ManyToOne
-    @JoinColumn(name = "pkcolaborador")
+    @JoinColumn(name = "idcolaborador")
     private MColaborador mColaborador;
 
 

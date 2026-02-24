@@ -35,7 +35,7 @@ public class MAnuncios
     private String activo;
 
     @ManyToOne
-    @JoinColumn(name = "pkcolaborador")
+    @JoinColumn(name = "idcolaborador")
     private MColaborador mColaborador;
 
     @OneToMany(mappedBy = "mAnuncios")
@@ -43,8 +43,6 @@ public class MAnuncios
 
 
     //contructor
-
-
     public MAnuncios(String codanuncio, String titulo, String contenido, LocalDate fechapublicacion, String activo, MColaborador mColaborador, List<MColaboradoranuncio> mColaboradoranuncio) {
         this.codanuncio = codanuncio;
         this.titulo = titulo;

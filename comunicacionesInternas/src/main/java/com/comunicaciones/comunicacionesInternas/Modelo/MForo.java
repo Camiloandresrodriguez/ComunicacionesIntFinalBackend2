@@ -34,7 +34,7 @@ public class MForo {
     private String activo;
 
     @ManyToOne
-    @JoinColumn(name = "pkcolaborador")
+    @JoinColumn(name = "idcolaborador")
     private MColaborador mColaborador;
 
     @OneToMany(mappedBy = "mForo")

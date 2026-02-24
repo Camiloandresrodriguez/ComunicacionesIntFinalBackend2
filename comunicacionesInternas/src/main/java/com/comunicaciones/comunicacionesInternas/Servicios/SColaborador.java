@@ -54,17 +54,12 @@ public class SColaborador
     // Consulta individual nombre
     public List<MColaborador>consultaindividualnombre(String nombrecolaborador) throws Exception
     {
-        try {
-            Optional<MColaborador>colaboradorencontrado = this.iColaborador.findById(nombrecolaborador);
-            if (colaboradorencontrado.isPresent()) {
+        try
+        {
                 return this.iColaborador.findByNombrecolaborador(nombrecolaborador);
-            }
-            else
-                {
-                throw new Exception("Colaborador no encontrado");
-                }
         }
-        catch (Exception error) {
+        catch (Exception error)
+        {
             throw new Exception(error.getMessage());
         }
     }

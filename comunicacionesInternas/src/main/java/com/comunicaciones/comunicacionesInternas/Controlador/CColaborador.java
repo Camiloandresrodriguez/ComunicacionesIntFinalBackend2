@@ -70,7 +70,7 @@ public class CColaborador
     }
 
     //Endpoint consulta individual por nombre
-    @GetMapping("/nombre/{nombrecolaborador}")
+    @GetMapping("/buscarnombre/{nombrecolaborador}")
     public ResponseEntity<?> consultaindividualnombre(@PathVariable String nombrecolaborador)throws Exception
     {
         try
