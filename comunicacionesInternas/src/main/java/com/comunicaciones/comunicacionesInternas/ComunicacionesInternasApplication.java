@@ -13,3 +13,32 @@ public class 	ComunicacionesInternasApplication
 	}
 
 }
+/*
+--Anuncios
+
+"codanuncio" : "",
+"titulo" : "",
+"contenido" : "",
+"fechapublicacion" : "",
+"activo" : "true",
+"mColaborador" : {"idcolaborador" : 10101010}
+
+--Foros
+
+"idforo" : "",
+"titulo" : "",
+"descripcion" : "",
+"fechapucreacion" : "",
+"activo" : "true",
+"mColaborador" : {"idcolaborador" : 10101010}
+
+--mensajesdirectos
+
+"codmensaje" : "",
+"titulomensaje" : "",
+"contenidomensaje" : "",
+"fechapublicacion" : "",
+"activo" : "true",
+"mColaborador" : {"idcolaborador" : 10101010}
+
+ */
